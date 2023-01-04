@@ -1,0 +1,45 @@
+@import "../../styles/typography.scss";
+
+@keyframes animateImg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+.loginRegisterPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  background: var(--gradient);
+  .loginRegisterForm{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    .logotypeImage {
+      margin-bottom: 10px;
+      animation: animateImg linear 4s infinite;
+    }
+    .title {
+      margin-bottom: 10px;
+    }
+    .desc {
+      @extend .mon-400-18-22;
+      margin-bottom: 20px;
+    }
+
+    .title, .desc {
+      text-align: center;
+      color: var(--textColorPrimary);
+    }
+  }
+}

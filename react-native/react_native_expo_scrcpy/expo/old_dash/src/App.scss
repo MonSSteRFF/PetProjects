@@ -1,0 +1,232 @@
+body{
+  @extend .font_600_24_34;
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 29px;
+  min-height: 100vh;
+  max-height: 100vh;
+  background: #1E1F20;
+}
+
+.App{
+  &__container{
+    height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
+    padding-top: 99px;
+  }
+}
+
+
+.customScroll{
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #373739;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #00B5B1;
+  }
+}
+
+
+
+
+.birthday{
+  display: flex;
+  align-items: center;
+  &__block{
+    display: flex;
+    align-items: center;
+    margin: 0 32px 0 34px;
+    &__date{
+      color: #00B5B1;
+    }
+    img{
+      display: none;
+    }
+    img[src]{
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      margin: 0 8px;
+      display: block;
+    }
+    &__name{
+      @extend .font_600_24_29;
+      color: #CCCCCF;
+    }
+    &:last-child{
+      margin: 0;
+      opacity: 0.5;
+    }
+  }
+}
+
+.temp{
+  display: flex;
+  align-items: center;
+  &__icon{
+    width: 56px;
+    height: 56px;
+    background: #00B5B1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-right: 32px;
+    background: linear-gradient(135.63deg, #00B5B1 0%, #00C7A9 113.14%);
+    img{
+      width: 34px;
+      height: 34px;
+      margin-bottom: -4px;
+      user-select: none;
+    }
+    &.yellow{
+      background: linear-gradient(135.63deg, #FFD953 0%, #FBB732 113.14%);
+    }
+    &.red{
+      background: linear-gradient(135.63deg, #C03926 0%, #993629 113.14%);
+    }
+  }
+  p{
+    margin-right: 24px;
+    &:last-child{
+      margin: 0;
+    }
+  }
+}
+
+
+.TaskItem{
+  width: 100%;
+  padding: 0 20px;
+  background: #2B2B2E;
+  .container{
+    padding: 25px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  p{
+    @extend .font_600_24_29;
+  }
+  p:nth-child(1){
+    width: 100%;
+  }
+  p:nth-child(2){
+    display: flex;
+    min-width: 230px;
+    &:before{
+      content: '';
+      background: url("../../../assets/img/user.svg") no-repeat center center;
+      width: 28px;
+      height: 28px;
+      margin-right: 16px;
+    }
+  }
+  p:nth-child(3){
+    display: flex;
+    min-width: 145px;
+    text-align: left;
+    &:before{
+      content: '';
+      background: url("../../../assets/img/sand-time.svg") no-repeat center center;
+      width: 28px;
+      height: 28px;
+      margin-right: 16px;
+    }
+  }
+}
+
+
+.Sites{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+
+.SiteItem{
+  width: 50%;
+  max-height: 79px;
+  padding: 0 20px;
+  background: #2B2B2E;
+  .container{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 20px;
+  }
+  .name{
+    min-width: 280px;
+  }
+  .hosting{
+    min-width: 120px;
+  }
+  .ssl{
+    min-width: 150px;
+  }
+  .hosting,.ssl{
+    span{
+      color: #00B5B1;
+    }
+  }
+  .state{
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    min-height: 34px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    &.normal{
+      background-image: url("../../../assets/img/galo4ka.svg");
+    }
+    &.update{
+      background-image: url("../../../assets/img/yellow-time.svg");
+    }
+    &.down{
+      background-image: url("../../../assets/img/x-icon.svg");
+    }
+  }
+}
+
+.nodrop{
+  border: 2px #676768 solid;
+  background: rgba(30, 31, 32, 0.4);
+  border-radius: 16px;
+  width: 330px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  p{
+    @extend .font_600_28_34;
+    text-align: center;
+  }
+  span{
+    @extend .font_600_40_49;
+    color: #00B5B1;
+    text-align: center;
+  }
+}
+
+
+.Tasks, .Sites{
+  min-height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  @extend .customScroll;
+  padding: 24px 0 24px 0;
+}

@@ -1,0 +1,78 @@
+@import "../../../styles/typography.scss";
+
+
+.label {
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+
+  background: #DDEDFF;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+
+  .input[type="text"],
+  .input[type="password"] {
+    border-radius: 14px;
+    padding: 16px;
+    width: 100%;
+    z-index: 1;
+    border: 1px var(--backgroundColor) solid;
+    transition: .4s;
+
+    &:focus{
+      border: 1px var(--primary) solid;
+    }
+
+
+    &:focus + .placeholder,
+    &[active="true"] + .placeholder {
+      transform: translate(0, -15px) scale(1.5);
+      opacity: 0.04;
+    }
+  }
+
+  .placeholder {
+    position: absolute;
+    cursor: text;
+    user-select: none;
+    transition: 0.6s;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    bottom: 16px;
+  }
+  .lines{
+    position:absolute;
+    bottom: -6px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0 20px;
+    .line{
+      display:block;
+      width: 20%;
+      height: 4px;
+      background: var(--backgroundSecond);
+      border-radius: 20px 20px 50px 50px;
+    }
+    .lineTrue{
+      @extend .line;
+      &:nth-child(1){
+        background: #FF9797;
+      }
+      &:nth-child(2){
+        background: #DDE76A;
+      }
+      &:nth-child(3){
+        background: #87E086;
+      }
+      &:nth-child(4){
+        background: #97CDFF;
+      }
+    }
+  }
+}

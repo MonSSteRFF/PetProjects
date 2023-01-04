@@ -1,0 +1,112 @@
+@import "typography";
+
+:root {
+  --black: #000000;
+  --greyL1: #2c2c2c;
+  --greyL2: #7a7a7a;
+  --greyL3: #DDEDFF;
+  --greyL4: #D9D9D9;
+  --white: #ffffff;
+
+  --blue: #4695F0;
+  --blueHover: #5ea2f3;
+  --blue2whiteGrad: linear-gradient(180deg, #0F77EE 0%, rgba(15, 119, 238, 0.47) 100%);
+  --insetBS: inset 0 2px 4px rgba(0, 0, 0, 0.11);
+}
+
+:root[theme="light"] {
+  --mainBoldColor: var(--black);
+  --textColorAll: var(--black);
+  --textColorLink: var(--greyL2);
+  --textColorPrimary: var(--white);
+
+  --backgroundColor: var(--white);
+  --backgroundPrimary: var(--greyL3);
+  --backgroundSecond: var(--greyL4);
+
+  --defBoxShadow: var(--insetBS);
+  --primary: var(--blue);
+  --primaryHover: var(--blueHover);
+
+
+  --gradient: var(--blue2whiteGrad);
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+
+  @extend .defaultFont;
+  color: var(--textColorAll);
+
+  transition-property: background-color, color, opacity;
+  transition-duration: 0.4s;
+}
+
+
+.container {
+  max-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+main,
+main.container{
+  padding-top: 40px;
+}
+
+.header {
+  background: var(--primary);
+  padding: 15px 30px;
+  min-height: 60px;
+  display: flex;
+  &__navigation{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+  }
+
+
+  .link {
+    border: 0;
+    position: relative;
+    margin-right: 15px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      transition: 0.4s;
+      transition-property: width, background-color;
+      height: 1px;
+      background: var(--textColorAll);
+    }
+
+    &:hover {
+      color: var(--textColorLink);
+      &:before {
+        background: var(--textColorLink);
+        width: 100%;
+      }
+    }
+
+    &.active {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@mixin font($fontName,$fontFullName,$fontWeight, $fontStyle) {
+  @font-face {
+    font-family: $fontName;
+    src: url("./fonts/" + $fontFullName + ".eot") format("eot"),
+    url("./fonts/" + $fontFullName + ".svg") format("svg"),
+    url("./fonts/" + $fontFullName + ".ttf") format("ttf"),
+    url("./fonts/" + $fontFullName + ".woff") format("woff"),
+    url("./fonts/" + $fontFullName + ".woff2") format("woff2");
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+  }
+}
+
+@include font("Montserrat", "Montserrat-Medium", 400, "normal");
+
+.mon-400 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.mon-400-18-22{
+  @extend .mon-400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.mon-400-22-26{
+  @extend .mon-400;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.mon-400-26-30{
+  @extend .mon-400;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+:root{
+  --white: #ffffff;
+  --black: #000000;
+  --blackHover: #6b6b6b;
+  --grey: #ebebeb;
+  --red: #ff0000;
+
+
+  --main: var(--white);
+  --primary: var(--black);
+  --primaryHover: var(--blackHover);
+  --second: var(--grey);
+  --error: var(--red);
+}
+
+
+
+
+$mainColor: var(--main);
+$primaryColor: var(--primary);
+$primaryColorHover: var(--primaryHover);
+$secondColor: var(--second);
+$error: var(--error);
+
+
+*,*:before,*:after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  color: $primaryColor;
+  @extend .mon-400-18-22;
+}

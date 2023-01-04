@@ -1,0 +1,11 @@
+@import '../Mybutton/Mybutton.module';
+
+.label{
+  display: block;
+  .label__input{
+    display: none;
+  }
+  .label__button{
+    @extend .button;
+  }
+}

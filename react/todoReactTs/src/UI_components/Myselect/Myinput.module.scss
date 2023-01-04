@@ -1,0 +1,23 @@
+@import '../../components/Todo/styles/index.module';
+
+.select{
+  display: flex;
+  align-items: center;
+  border: 1px $primaryColor solid;
+  border-right: 0;
+  cursor: pointer;
+  position: relative;
+  &__wrapper{
+    cursor: pointer;
+    &__option{
+      white-space: nowrap;
+      padding: 8px 36px 8px 8px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+    }
+  }
+
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Counters</title>
+</head>
+<body>
+
+<main>
+  <p>count1</p>
+  <span class="count1" data-count="20220">-500</span>
+  <span class="count1" data-count="10000">62</span>
+  <span class="count1" data-count="500">134</span>
+
+  <p>count2</p>
+  <span class="count2" data-count="20220">123</span>
+  <span class="count2" data-count="10000">842</span>
+  <span class="count2" data-count="500">436</span>
+
+  <p>count3</p>
+  <span class="count3" data-count="20220">326</span>
+  <span class="count3" data-count="10000">-1001</span>
+  <span class="count3" data-count="500">100</span>
+
+  <p>count4</p>
+  <span class="count4" data-count="2022">50</span>
+
+
+</main>
+
+
+<script src="counter.js"></script>
+
+<script>
+  new counter(['count1', 'count3']).init();
+  new counter(['count2']).init(200);
+  new counter('count4').init(40);
+</script>
+
+</body>
+
+</html>

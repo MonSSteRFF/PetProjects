@@ -1,0 +1,64 @@
+@import "../../../styles/typography.scss";
+
+
+
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  &__wrapper, &__wrapper__columns {
+    max-width: 350px;
+    background-color: var(--backgroundColor);
+    padding: 20px;
+    border-radius: 20px;
+    .form__title {
+      @extend .mon-400-24-26;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      margin: 7px 0;
+      &__item {
+        @extend .mon-400-14-16;
+        cursor: pointer;
+      }
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 7px 0 15px;
+    }
+    .checkboxes {
+      margin: 15px 0 7px;
+    }
+
+
+    .inputsBox{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      .column{
+        &:last-child{
+          margin-left: 0;
+        }
+      }
+    }
+
+  }
+}
+
+.form__wrapper__columns{
+  max-width:650px;
+  .inputsBox .column:last-child{
+    margin-left:20px;
+
+  }
+}

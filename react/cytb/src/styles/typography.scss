@@ -1,0 +1,81 @@
+@mixin font($fontName, $fontWeight, $fontWeightNumber, $fontStyle) {
+  @font-face {
+    font-family: $fontName;
+    src: url("/assets/fonts/" + $fontName + "-" + $fontWeight + ".eot") format("eot"),
+         url("/assets/fonts/" + $fontName + "-" + $fontWeight + ".svg") format("svg"),
+         url("/assets/fonts/" + $fontName + "-" + $fontWeight + ".ttf") format("ttf"),
+         url("/assets/fonts/" + $fontName + "-" + $fontWeight + ".woff") format("woff"),
+         url("/assets/fonts/" + $fontName + "-" + $fontWeight + ".woff2") format("woff2");
+    font-weight: $fontWeightNumber;
+    font-style: $fontStyle;
+  }
+}
+
+@include font("Montserrat", "Bold", 700, "normal");
+@include font("Montserrat", "SemiBold", 600, "normal");
+@include font("Montserrat", "Medium", 400, "normal");
+
+.mon-700{
+  font-family:"Montserrat", sans-serif;
+  font-weight:700;
+}
+.mon-600{
+  font-family:"Montserrat", sans-serif;
+  font-weight:600;
+}
+.mon-400{
+  font-family:"Montserrat", sans-serif;
+  font-weight:400;
+}
+
+.mon-400-14-16{
+  @extend .mon-400;
+  font-size:14px;
+  line-height:16px;
+}
+.mon-400-16-20{
+  @extend .mon-400;
+  font-size:16px;
+  line-height:20px;
+}
+.mon-400-18-22{
+  @extend .mon-400;
+  font-size:18px;
+  line-height:22px;
+}
+.mon-400-24-26{
+  @extend .mon-400;
+  font-size:24px;
+  line-height:26px;
+}
+.mon-400-32-34{
+  @extend .mon-400;
+  font-size:32px;
+  line-height:34px;
+}
+.mon-600-32-34{
+  @extend .mon-600;
+  font-size:32px;
+  line-height:34px;
+}
+
+
+.mon-400-48-52{
+  @extend .mon-400;
+  font-size:48px;
+  line-height:52px;
+}
+
+
+
+.defaultFont{
+  @extend .mon-400-18-22;
+}
+
+h1{
+  @extend .mon-600-32-34;
+}
+
+
+
+

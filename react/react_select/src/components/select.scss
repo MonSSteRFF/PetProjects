@@ -1,0 +1,35 @@
+.select {
+  position:relative;
+  &__target {
+    cursor: pointer;
+    width: 300px;
+    border: 1px #000 solid;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    padding: 20px;
+  }
+  &__wrapper {
+    overflow:hidden;
+    position:absolute;
+    top: calc(100% - 1px);
+    &__inner {
+      border: 1px #000 solid;
+      border-radius: 5px;
+    }
+    &__item {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      width: 300px;
+      border-bottom: 1px #000 solid;
+      padding: 10px;
+      cursor:pointer;
+      background: #fff;
+      &:last-child{
+        border-bottom: 0;
+      }
+    }
+  }
+}

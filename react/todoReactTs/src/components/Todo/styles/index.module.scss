@@ -1,0 +1,110 @@
+@import '../../../assets/global';
+
+.todo {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px $primaryColor solid;
+
+  &__title {
+    @extend .mon-400-26-30;
+    padding: 40px 15px 10px 15px;
+  }
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+
+  .column {
+    border-top: 1px $primaryColor solid;
+
+    &:not(:last-child) {
+      border-right: 1px $primaryColor solid;
+    }
+
+    &__wrapper {
+      height: calc(100% - 55px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .list {
+      padding: 15px;
+
+      .item {
+        border: 1px $primaryColor solid;
+        border-radius: 15px;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        &__title {
+          @extend .mon-400-22-26;
+          margin-bottom: 10px;
+          border-bottom: 1px $primaryColor solid;
+          padding: 10px 10px 5px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &__text {
+            white-space: nowrap;
+          }
+        }
+
+        &__description {
+          padding: 5px 10px 10px 10px;
+        }
+      }
+    }
+
+  }
+}
+
+.columnTitle {
+  padding: 0 15px;
+  border-bottom: 1px $primaryColor solid;
+  height: 55px;
+  display: flex;
+  align-items: center;
+
+  &__text {
+
+  }
+}
+
+
+.addColumn {
+  padding: 15px;
+  border-top: 1px $primaryColor solid;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+  }
+}
+
+.removeColumn {
+
+}
+
+.addTodoItem {
+  @extend .addColumn;
+
+  &__wrapper {
+    @extend .addColumn__wrapper;
+  }
+}
+
+.importExport {
+  display: flex;
+  padding: 15px;
+  border-top: 1px $primaryColor solid;
+  button:not(:last-child){
+    margin-right: 20px;
+  }
+}

@@ -1,0 +1,33 @@
+@mixin font($fname, $fontweight, $fnamefull, $fontstyle) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fontstyle;
+		font-weight: $fontweight;
+		src: url('/fonts/'+ $fnamefull +'.eot') format("eot");
+		src: url('/fonts/'+ $fnamefull +'.otf') format("eot");
+		src: url('/fonts/'+ $fnamefull +'.svg') format("svg");
+		src: url('/fonts/'+ $fnamefull +'.ttf') format("ttf");
+		src: url('/fonts/'+ $fnamefull +'.woff') format("woff");
+		src: url('/fonts/'+ $fnamefull +'.woff2') format("woff2");
+	}
+}
+@include font(Gilroy,900,'Gilroy-Black',normal);
+@include font(Gilroy,900,'Gilroy-BlackItalic',italic);
+@include font(Gilroy,700,'Gilroy-Bold',normal);
+@include font(Gilroy,700,'Gilroy-BoldItalic',italic);
+@include font(Gilroy,800,'Gilroy-Extrabold',normal);
+@include font(Gilroy,800,'Gilroy-ExtraboldItalic',italic);
+@include font(Gilroy,900,'Gilroy-Heavy',normal);
+@include font(Gilroy,900,'Gilroy-HeavyItalic',italic);
+@include font(Gilroy,300,'Gilroy-Light',normal);
+@include font(Gilroy,300,'Gilroy-LightItalic',italic);
+@include font(Gilroy,500,'Gilroy-Medium',normal);
+@include font(Gilroy,500,'Gilroy-MediumItalic',italic);
+@include font(Gilroy,400,'Gilroy-Regular',normal);
+@include font(Gilroy,400,'Gilroy-RegularItalic',italic);
+@include font(Gilroy,600,'Gilroy-Semibold',normal);
+@include font(Gilroy,600,'Gilroy-SemiboldItalic',italic);
+@include font(Gilroy,100,'Gilroy-Thin',normal);
+@include font(Gilroy,100,'Gilroy-ThinItalic',italic);
+@include font(Gilroy,200,'Gilroy-UltraLight',normal);
+@include font(Gilroy,200,'Gilroy-UltraLightItalic',italic);

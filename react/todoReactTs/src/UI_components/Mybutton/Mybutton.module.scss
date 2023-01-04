@@ -1,0 +1,14 @@
+@import '../../components/Todo/styles/index.module';
+
+.button{
+  display: block;
+  padding: 5px 10px;
+  background: $primaryColor;
+  color: $mainColor;
+  cursor: pointer;
+  transition: .4s;
+  white-space: nowrap;
+  &:hover{
+    background: $primaryColorHover;
+  }
+}
