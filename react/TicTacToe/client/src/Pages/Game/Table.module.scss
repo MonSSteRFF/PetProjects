@@ -1,0 +1,62 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &:last-child {
+    border-bottom: 1px #000 solid;
+  }
+}
+
+.tableItem {
+  width: 40px;
+  height: 40px;
+  border-top: 1px #000 solid;
+  border-left: 1px #000 solid;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:last-child {
+    border-right: 1px #000 solid;
+  }
+}
+
+%beforeAfterItem {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  position: absolute;
+  background: #000;
+}
+
+.item_x {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before {
+    @extend %beforeAfterItem;
+    transform: rotate(-45deg);
+  }
+  &:after {
+    @extend %beforeAfterItem;
+    transform: rotate(45deg);
+  }
+}
+.item_o {
+  width: 20px;
+  height: 20px;
+  border: 1px #000 solid;
+  border-radius: 20px;
+}
